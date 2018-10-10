@@ -1,0 +1,97 @@
+<!DOCTYPE html><html><head><title>文章列表_后台管理</title>
+<meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="css/bootstrap.min.css"/>
+<link rel="stylesheet" href="css/style.css"/>
+<script src="js/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+</head><body>
+<!-- 導航 -->
+<nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+        <!-- 小屏幕導航按鈕和logo -->
+        <div class="navbar-header">
+            <button class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a href="javascript:;" class="navbar-brand"> 管理中心</a>
+        </div>
+        <!-- 小屏幕導航按鈕和logo -->
+        <!-- 導航 -->
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                <li><a href="javascript:;" target="_blank"><span class="glyphicon glyphicon-home"></span>&nbsp;&nbsp;我的主頁</a></li>
+                <li><a href="javascript:;"><span class="glyphicon glyphicon-list-alt"></span>&nbsp;&nbsp;文章管理</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li class="dropdown">
+                    <a id="dLabel" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <span class="glyphicon glyphicon-user"></span>&nbsp;&nbsp;FLi<span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="dLabel">
+                        <li><a href="javascript:;"><span class="glyphicon glyphicon-cog"></span>&nbsp;&nbsp;設置中心</a></li>
+                    </ul>
+                </li>
+                <li><a href="javascript:;"><span class="glyphicon glyphicon-off"></span>&nbsp;&nbsp;退出</a></li>
+            </ul>
+        </div>
+        <!-- 導航 -->
+    </div>
+</nav>
+<!-- 導航 -->
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-2">
+            <div class="list-group">
+                <a href="content.html" class="list-group-item">内容管理</a>
+                <a href="content-post.html" class="list-group-item active">添加内容</a>
+            </div>
+        </div>
+        <div class="col-md-10">
+            <div class="page-header">
+                <h1>内容管理</h1>
+            </div>
+            <ul class="nav nav-tabs">
+                <li>
+                    <a href="content.html">内容管理</a>
+                </li>
+                <li class="active">
+                    <a href="content_post.html">添加内容</a>
+                </li>
+            </ul>
+            <form action="#" class="mar_t15">
+                <div class="form-group">
+                    <label for="title">标题</label>
+                    <input type="text" id="title" class="form-control" placeholder="请输入文章标题">
+                </div>
+                <div class="form-group">
+                    <label for="content">文章内容</label>
+                    <textarea id="content" class="form-control" rows="15" cols="10" placeholder="请输入文章正文部分"></textarea>
+                </div>
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox">全局置顶
+                    </label>
+                    <button type="submit" class="btn btn-default pull-right">发布文章</button>
+                </div>
+            </form>
+
+        </div>
+    </div>
+</div>
+
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <p class="text-muted center">
+                    Copyright&nbsp;&copy;&nbsp;2018&nbsp;&nbsp;繁橙工作室&nbsp;&nbsp;374861669@qq.com
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+</body></html>

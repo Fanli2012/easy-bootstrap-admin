@@ -1,0 +1,200 @@
+<!DOCTYPE html><html><head><title>文章列表_后台管理</title>
+<meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="css/bootstrap.min.css"/>
+<link rel="stylesheet" href="css/style.css"/>
+<script src="js/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+</head><body>
+<!-- 導航 -->
+<nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+        <!-- 小屏幕導航按鈕和logo -->
+        <div class="navbar-header">
+            <button class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a href="javascript:;" class="navbar-brand"> 管理中心</a>
+        </div>
+        <!-- 小屏幕導航按鈕和logo -->
+        <!-- 導航 -->
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                <li><a href="javascript:;" target="_blank"><span class="glyphicon glyphicon-home"></span>&nbsp;&nbsp;我的主頁</a></li>
+                <li><a href="javascript:;"><span class="glyphicon glyphicon-list-alt"></span>&nbsp;&nbsp;文章管理</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li class="dropdown">
+                    <a id="dLabel" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <span class="glyphicon glyphicon-user"></span>&nbsp;&nbsp;FLi<span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="dLabel">
+                        <li><a href="javascript:;"><span class="glyphicon glyphicon-cog"></span>&nbsp;&nbsp;設置中心</a></li>
+                    </ul>
+                </li>
+                <li><a href="javascript:;"><span class="glyphicon glyphicon-off"></span>&nbsp;&nbsp;退出</a></li>
+            </ul>
+        </div>
+        <!-- 導航 -->
+    </div>
+</nav>
+<!-- 導航 -->
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="panel-body" style="padding: 15px 0;">
+                <ul class="nav nav-tabs">
+                    <li class="active"><a href="">文章列表</a></li>
+                    <li><a href="article-add.html">添加文章</a></li>
+                </ul>
+            </div>
+            <div class="panel-body">
+                <div class="row">
+                    <form action="" method="get">
+                        <div class="col-md-4">
+                            <div class="form-group text-left">
+                                <a href="javascript:;" class="btn btn-primary" role="button">分类列表</a>
+                            </div>
+                        </div>
+                        <div class="col-md-3"></div>
+                        <div class="col-md-2"></div>
+                        <div class="col-md-3">
+                            <div class="input-group">
+                                <input class="form-control" type="text" value="" placeholder="请输入关键词" name="keyword">
+                                <span class="input-group-btn">
+                                    <button type="submit" class="btn btn-primary">
+                                        <i class="glyphicon glyphicon-search"></i>
+                                    </button>
+                                </span>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+                        <div class="panel panel-default">
+                <div class="table-responsive">
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th class="w5p">ID</th>
+                                <th>标题</th>
+                                <th class="w10p">分类</th>
+                                <th class="w10p">时间</th>
+                                <th class="w8p">点击</th>
+                                <th class="w8p">状态</th>
+                                <th class="w20p">操作</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="center">11380</td>
+                                <td class="center">一文读懂谷歌秋季发布会</td>
+                                <td class="center"><a href="javascript:;">新聞中心</a></td>
+                                <td class="center">2018-09-27</td>
+                                <td class="center">393</td>
+                                <td class="center"><span class="label label-success">已审核</span></td>
+                                <td class="center">
+                                    <a href="javascript:;" target="_blank"><i class="glyphicon glyphicon-eye-open"></i> 预览</a>
+                                    <a href="javascript:;"><i class="glyphicon glyphicon-pencil"></i> 修改</a>
+                                    <a data-url="" data-toggle="modal" data-target="#delConfirmModal" href="javascript:;"><i class="glyphicon glyphicon-remove"></i> 删除</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="center">11380</td>
+                                <td class="center">一文读懂谷歌秋季发布会</td>
+                                <td class="center"><a href="javascript:;">新聞中心</a></td>
+                                <td class="center">2018-09-27</td>
+                                <td class="center">393</td>
+                                <td class="center"><span class="label label-success">已审核</span></td>
+                                <td class="center">
+                                    <a href="javascript:;" target="_blank"><i class="glyphicon glyphicon-eye-open"></i> 预览</a>
+                                    <a href="javascript:;"><i class="glyphicon glyphicon-pencil"></i> 修改</a>
+                                    <a data-url="" data-toggle="modal" data-target="#delConfirmModal" href="javascript:;"><i class="glyphicon glyphicon-remove"></i> 删除</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="center">11380</td>
+                                <td class="center">一文读懂谷歌秋季发布会</td>
+                                <td class="center"><a href="javascript:;">新聞中心</a></td>
+                                <td class="center">2018-09-27</td>
+                                <td class="center">393</td>
+                                <td class="center"><span class="label label-success">已审核</span></td>
+                                <td class="center">
+                                    <a href="javascript:;" target="_blank"><i class="glyphicon glyphicon-eye-open"></i> 预览</a>
+                                    <a href="javascript:;"><i class="glyphicon glyphicon-pencil"></i> 修改</a>
+                                    <a data-url="" data-toggle="modal" data-target="#delConfirmModal" href="javascript:;"><i class="glyphicon glyphicon-remove"></i> 删除</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="center">11380</td>
+                                <td class="center">一文读懂谷歌秋季发布会</td>
+                                <td class="center"><a href="javascript:;">新聞中心</a></td>
+                                <td class="center">2018-09-27</td>
+                                <td class="center">393</td>
+                                <td class="center"><span class="label label-success">已审核</span></td>
+                                <td class="center">
+                                    <a href="javascript:;" target="_blank"><i class="glyphicon glyphicon-eye-open"></i> 预览</a>
+                                    <a href="javascript:;"><i class="glyphicon glyphicon-pencil"></i> 修改</a>
+                                    <a data-url="" data-toggle="modal" data-target="#delConfirmModal" href="javascript:;"><i class="glyphicon glyphicon-remove"></i> 删除</a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="panel-footer">
+                    <ul class="pagination"><li class="disabled"><span>&laquo;</span></li> <li class="active"><span>1</span></li><li><a href="javascript:;">2</a></li> <li><a href="javascript:;">&raquo;</a></li></ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- 删除模态框Modal -->
+<div class="modal fade bs-example-modal-sm" id="delConfirmModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog modal-sm" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">信息</h4>
+            </div>
+            <div class="modal-body">确定删除吗？<br><br><input id="del-url" style="display:none;" type="text" value=""></div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                <button type="button" class="btn btn-success" onclick="javascript:window.location.href = $('#del-url').val();">确定</button>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+$(function() {
+    // 绑定模态框展示的方法  
+    $("#delConfirmModal").on("show.bs.modal",function(e){
+        // 获得点击打开的按钮
+        var button=$(e.relatedTarget);
+        // 根据标签获得按钮传入的参数
+        var recipient=button.data("url");
+        // 获得模态框本身
+        var modal=$(this);
+        // 更改将title的text  
+        //modal.find(".modal-title").text("Hello"+recipient);
+        // 更改body里input的值
+        modal.find("#del-url").val(recipient);
+    });
+});
+</script>
+
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <p class="text-muted center">
+                    Copyright&nbsp;&copy;&nbsp;2018&nbsp;&nbsp;繁橙工作室&nbsp;&nbsp;374861669@qq.com
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+</body></html>

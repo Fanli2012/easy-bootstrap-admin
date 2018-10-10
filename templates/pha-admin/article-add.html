@@ -1,0 +1,171 @@
+<!DOCTYPE html><html><head><title>文章列表_后台管理</title>
+<meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="css/bootstrap.min.css"/>
+<link rel="stylesheet" href="css/style.css"/>
+<script src="js/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+</head><body>
+<!-- 導航 -->
+<nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+        <!-- 小屏幕導航按鈕和logo -->
+        <div class="navbar-header">
+            <button class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a href="javascript:;" class="navbar-brand"> 管理中心</a>
+        </div>
+        <!-- 小屏幕導航按鈕和logo -->
+        <!-- 導航 -->
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                <li><a href="javascript:;" target="_blank"><span class="glyphicon glyphicon-home"></span>&nbsp;&nbsp;我的主頁</a></li>
+                <li><a href="javascript:;"><span class="glyphicon glyphicon-list-alt"></span>&nbsp;&nbsp;文章管理</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li class="dropdown">
+                    <a id="dLabel" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <span class="glyphicon glyphicon-user"></span>&nbsp;&nbsp;FLi<span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="dLabel">
+                        <li><a href="javascript:;"><span class="glyphicon glyphicon-cog"></span>&nbsp;&nbsp;設置中心</a></li>
+                    </ul>
+                </li>
+                <li><a href="javascript:;"><span class="glyphicon glyphicon-off"></span>&nbsp;&nbsp;退出</a></li>
+            </ul>
+        </div>
+        <!-- 導航 -->
+    </div>
+</nav>
+<!-- 導航 -->
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="panel-body" style="padding: 15px 0;">
+                <ul class="nav nav-tabs">
+                    <li><a href="article-index.html">文章列表</a></li>
+                    <li class="active"><a href="javascript:;">添加文章</a></li>
+                </ul>
+            </div>
+            <br>
+            <div class="panel-body">
+            <form id="addarc" method="post" action="" role="form" enctype="multipart/form-data" class="form-horizontal">
+                <div class="form-group">
+                    <label class="col-sm-3 control-label"><span class="text-danger"> * </span>标题</label>
+                    <div class="col-sm-4">
+                        <input type="text" name="title" class="form-control" placeholder="标题" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-3 control-label">
+                        <span class="text-danger">*</span>分类</label>
+                    <div class="col-sm-4 form-inline">
+                        <select class="form-control" id='typeid' name="typeid">
+                            <option value ="229">新聞中心</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-3 control-label"><span class="text-danger"> * </span>是否置顶</label>
+                    <div class="col-sm-4">
+                        <div class="radio">
+                            <label>
+                                <input type="radio" name="tuijian" id="tuijian" value="1"> 是
+                            </label>
+                            <label>
+                                <input type="radio" name="tuijian" id="tuijian" value="0" checked> 否
+                            </label>
+                        </div>
+                    </div>
+                </div>
+<script type="text/plain" id="ueditorimg"></script>
+                <div class="form-group">
+                    <label class="col-sm-3 control-label">摘要</label>
+                    <div class="col-sm-6">
+                    <textarea class="form-control" name="description" rows="3"></textarea>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-3 control-label">内容</label>
+                    <div class="col-sm-9">
+                        <!-- 加载编辑器的容器 --><script id="container" name="body" type="text/plain"></script>
+                        <!-- 配置文件 --><script type="text/javascript" src="plugins/flueditor/ueditor.config.js"></script>
+                        <!-- 编辑器源码文件 --><script type="text/javascript" src="plugins/flueditor/ueditor.all.min.js"></script>
+                        <!-- 实例化编辑器 --><script type="text/javascript">var ue = UE.getEditor('container',{maximumWords:100000,initialFrameHeight:320,enableAutoSave:false});</script>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-offset-3 col-sm-10">
+                        <button type="submit" onclick="" class="btn btn-success" value="Submit">保存(Submit)</button>
+                        <button type="reset" class="btn btn-default" value="Reset">重置(Reset)</button>
+                    </div>
+                </div>
+            </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+$(function(){
+    $(".required").blur(function(){
+        var $parent = $(this).parent();
+        $parent.find(".formtips").remove();
+        if(this.value=="")
+        {
+            $parent.append(' <small class="formtips onError"><font color="red">不能为空！</font></small>');
+        }
+        else
+        {
+            var title = $("#title").val();
+            $.ajax({
+                url: "/fladmin/Article/articleexists",
+                type: "GET",
+                cache: false,
+                data: {
+                    "title":title
+                    //"title":title.replace("'", '&#039;')
+                },
+                success: function(data){
+                    if(data>0)
+                    {
+                        $parent.append(' <small class="formtips onSuccess"><font color="green">已经存在</font></small>');
+                    }
+                    else
+                    {
+                        $parent.append(' <small class="formtips onSuccess"><font color="green">OK</font></small>');
+                    }
+                }
+            });
+        }
+    });
+
+    //重置
+    $('#addarc input[type="reset"]').click(function(){
+            $(".formtips").remove(); 
+    });
+
+    $("#addarc").submit(function(){
+        $(".required").trigger('blur');
+        var numError = $('#addarc .onError').length;
+        
+        if(numError){return false;}
+    });
+});
+</script>
+
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <p class="text-muted center">
+                    Copyright&nbsp;&copy;&nbsp;2018&nbsp;&nbsp;繁橙工作室&nbsp;&nbsp;374861669@qq.com
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
